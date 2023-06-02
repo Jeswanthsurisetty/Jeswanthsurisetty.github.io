@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordered List with Icons</title>
+  <style>
+    .container {
+  margin-top: 50px;
+}
+
+.custom-list {
+  list-style: none;
+  counter-reset: custom-counter;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  counter-increment: custom-counter;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+.custom-list li::before {
+  content: counter(custom-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+}
+
+.list-icon {
+  margin-right: 10px;
+  font-size: 30px;
+  color: red;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="custom-list">
+      <li><span class="list-icon">&#9733;</span> Paris</li>
+      <li><span class="list-icon">&#9733;</span> London</li>
+      <li><span class="list-icon">&#9733;</span> Delhi</li>
+      <li><span class="list-icon">&#9733;</span> Tokyo</li>
+    </ul>
+  </div>
+</body>
+
+</html>
