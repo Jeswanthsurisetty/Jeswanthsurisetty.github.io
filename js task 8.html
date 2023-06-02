@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .train-container {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      background-color: #f2f2f2;
+      overflow: hidden;
+    }
+    
+    .train {
+      position: absolute;
+      top: 20%;
+      left: -100px;
+      width: 250px;
+      height: 150px;
+      animation: trainAnimation 8s linear infinite;
+    }
+    
+    .train-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes trainAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="font-size: 24px;">Click the following buttons to handle the animations</h1>
+  <div class="train-container">
+    <div class="train">
+      <img src="https://www.pngitem.com/pimgs/m/133-1330705_clipart-of-rail-toy-train-transparent-background-hd.png" class="train-image" alt="Train">
+    </div>
+  </div>
+
+  <button id="startButton">Start</button>
+  <button id="stopButton">Stop</button>
+
+  <script>
+    const train = document.querySelector('.train');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    let animation;
+
+    startButton.addEventListener('click', startAnimation);
+    stopButton.addEventListener('click', stopAnimation);
+
+    function startAnimation() {
+      train.style.animationPlayState = 'running';
+    }
+
+    function stopAnimation() {
+      train.style.animationPlayState = 'paused';
+    }
+  </script>
+</body>
+</html>
